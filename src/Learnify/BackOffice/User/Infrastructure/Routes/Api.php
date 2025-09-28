@@ -1,9 +1,11 @@
 <?php
 
-//use Learnify\BackOffice\User\Infrastructure\Controllers\ExampleGETController;
+use Learnify\BackOffice\User\Infrastructure\Controllers\GetUserController;
+use Learnify\BackOffice\User\Infrastructure\Controllers\CreateUserController;
 
-// Simple route example
-// Route::get('/', [ExampleGETController::class, 'index']);
+
+Route::get('/{id}', GetUserController::class);
+Route::post('/store', CreateUserController::class);
 
 //Authenticathed route example
 // Route::middleware(['auth:sanctum','activitylog'])->get('/', [ExampleGETController::class, 'index']);

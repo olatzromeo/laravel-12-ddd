@@ -13,9 +13,9 @@ readonly class User {
         private Email $email
     ) {}
 
-    public function create(String $username, String $email): self
+    public static function create(string $username, string $email, ?string $uuid): self
     {
-        return new self(Uuid::uuid4()->toString(), UserName::create($username), Email::create($email));
+        return new self($uuid ?? Uuid::uuid4()->toString(), UserName::create($username), Email::create($email));
     }
 
     public function id(): string
